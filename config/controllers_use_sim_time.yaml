@@ -1,0 +1,5 @@
+# This file is added onto the controllers.yaml file whenever you want to run in 
+# simulation mode.
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
