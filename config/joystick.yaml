@@ -1,25 +1,28 @@
 joy_node:
   ros__parameters:
     device_id: 0
-    deadzone: 0.05
-    autorepeat_rate: 20.0
+    deadzone: 0.05 # Amount by which the joystick has to move before it is considered to be off-center
+    autorepeat_rate: 20.0 #Rate in Hz at which a joystick that has a non-changing state will resend the previously sent message.
+    sticky_buttons: false # If false, button press -> output 1, button release -> output 0. 
+    coalesce_interval_ms: 1 # number of milliseconds to wait after an axis event before publishing a message
 
 teleop_node:
   ros__parameters:
     axis_linear:
-      x: 1
+      x: 0
     scale_linear:
-      x: 0.5
+      x: 2.0
     scale_linear_turbo:
-      x: 1.0
+      x: 3.0
 
     axis_angular:
-      yaw: 0
+      yaw: 1
     scale_angular:
-      yaw: 0.5
+      yaw: 0.2
     scale_angular_turbo:
-      yaw: 1.0
+      yaw: 0.4
 
+    publish_stamped_twist: true # Jazzy requires TwistStamped messages
 
     enable_button: 4 # LB on Logitech F710
     enable_turbo_button: 5 # RB on Logitech F710

@@ -33,16 +33,8 @@ def generate_launch_description():
         executable='teleop_node',
         name='teleop_node',
         parameters=[joystick_config_file, {'use_sim_time': use_sim_time}],
-        # remappings=[('/cmd_vel','/cmd_vel_joy')],
+        remappings=[('/cmd_vel','/cmd_vel_joy')],
     )
-
-    # twist_stamper = Node(
-    #         package='twist_stamper',
-    #         executable='twist_stamper',
-    #         parameters=[{'use_sim_time': use_sim_time}],
-    #         remappings=[('/cmd_vel_in','/diff_cont/cmd_vel_unstamped'),
-    #                     ('/cmd_vel_out','/diff_cont/cmd_vel')]
-    #      )
 
     # TODO: Add the option to run the keyboard node as part of this launch file
     # Use condition=IfCondition(NotSubstitution()) to toggle options, and the following node
@@ -61,5 +53,4 @@ def generate_launch_description():
         use_sim_time_arg,
         joy_node,
         teleop_node,
-        # twist_stamper       
     ])
