@@ -18,9 +18,9 @@ teleop_node:
     axis_angular:
       yaw: 0
     scale_angular:
-      yaw: 0.5
-    scale_angular_turbo:
       yaw: 1.0
+    scale_angular_turbo:
+      yaw: 2.0
 
     publish_stamped_twist: true # Jazzy requires TwistStamped messages
 
