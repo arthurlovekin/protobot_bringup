@@ -169,11 +169,12 @@ def generate_launch_description():
     )
     launch_description.add_action(ros_gz_bridge_node)
 
-    # ros_gz_image_bridge = Node(
-    #     package="ros_gz_image",
-    #     executable="image_bridge",
-    #     arguments=["/camera/image_raw"]
-    # )
+    ros_gz_image_bridge = Node(
+        package="ros_gz_image",
+        executable="image_bridge",
+        arguments=["/camera/image_raw"]
+    )
+    launch_description.add_action(ros_gz_image_bridge)
 
     # bring up rviz if use_rviz is true
     rviz_config_file = PathJoinSubstitution([
